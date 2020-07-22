@@ -1,6 +1,6 @@
 # Build a Rover combining the best of Azure Sphere security with FreeRTOS
 
-![](https://raw.githubusercontent.com/gloveboxes/Azure-Sphere-Rover-Bot-FreeRTOS-with-Azure-IoT/master/resources/architecture.png)
+![](https://raw.githubusercontent.com/gloveboxes/Azure-Sphere-Rover-Bot-FreeRTOS-with-Azure-IoT/master/resources/architecture-twitter.png)
 
 ---
 
