@@ -1,4 +1,4 @@
-# Build a seeing eyed rover combining the best of Azure Sphere security and FreeRTOS
+# Build a Rover combining the best of Azure Sphere security with FreeRTOS
 
 ![](resources/architecture.png)
 
@@ -67,7 +67,11 @@ The application running on the Azure Sphere consists of two parts.
 
 ### Azure IoT Highlevel Application
 
-The application running on the Azure Sphere A7 Highlevel application core is responsible for less timing sensitive tasks such as establishing WiFi/Network connectivity, negotiating security and connecting with Azure IoT Central, updating the device twin and send telemetry messages.
+* The application running on the Azure Sphere A7 Highlevel application core is responsible for less timing sensitive tasks such as establishing WiFi/Network connectivity, negotiating security and connecting with Azure IoT Central, updating the device twin and send telemetry messages.
+
+### Extending
+
+* I am thinking about extending this solution with a local TinyML module for smarter navigation.
 
 --
 
@@ -98,3 +102,7 @@ Azure IoT Central is also extensible using rules and workflows. For more informa
 2. Review [Integrate FreeRTOS Real-time room sensors with Azure IoT](https://github.com/gloveboxes/Azure-Sphere-Learning-Path/tree/master/zdocs_visual_studio_iot_central/Lab_5_FreeRTOS_and_Inter-Core_Messaging).
 3. Learn how to connect and Azure Sphere to [Azure IoT Central](https://github.com/gloveboxes/Azure-Sphere-Learning-Path/tree/master/zdocs_visual_studio_iot_central/Lab_2_Send_Telemetry_to_Azure_IoT_Central) or [Azure IoT Hub](https://github.com/gloveboxes/Azure-Sphere-Learning-Path/tree/master/zdocs_vs_code_iot_hub/Lab_2_Send_Telemetry_to_Azure_IoT_Hub).
 4. The IoT Central Device Template Capabilities Model JSON file for this solution is included in the **iot_central** directory of this repo.
+
+---
+
+Have fun and stay safe and be sure to follow us on [#JulyOT](https://twitter.com/hashtag/JulyOT?src=hash&ref_src=twsrc%5Etfw).
