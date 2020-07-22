@@ -2,9 +2,11 @@
 
 ![](resources/architecture.png)
 
+---
+
 ## What you will learn
 
-You will learn how to integrate a Realtime FreeRTOS application responsible for running a timing sensitive ultrasonic distance sensor with the security and cloud connectivity of Azure Sphere.
+You will learn how to integrate a Real-time FreeRTOS application responsible for running a timing-sensitive ultrasonic distance sensor with the security and cloud connectivity of Azure Sphere.
 
 ---
 
@@ -16,7 +18,7 @@ This is part of the #JulyOT [IoT Tech Community](http://aka.ms/julyot) series, a
 
 ## Source code and learning resources
 
-Source code: [Azure Sphere seeing eyed rover Realtime FreeRTOS sensors and Azure IoT](https://gloveboxes.github.io/Azure-Sphere-Rover-Bot-FreeRTOS-with-Azure-IoT/).
+Source code: [Azure Sphere seeing eyed rover Real-time FreeRTOS sensors and Azure IoT](https://gloveboxes.github.io/Azure-Sphere-Rover-Bot-FreeRTOS-with-Azure-IoT/).
 
 Learning resources: [Azure Sphere Developer Learning Path](https://github.com/gloveboxes/Azure-Sphere-Learning-Path).
 
@@ -42,11 +44,10 @@ The Azure Sphere is built on the Mediatec MT3620. This crossover MCU consists of
 
 The **three applications cores** are as follows:
 
-* 1 x  ARM Cortex A7 core running Embedded Linux (built with Yokto), exposing a set of POSIX APIs. Developers can build and deploy a **High Level** application to this core. This core is also responsible for the TrustZone Security Monitor, threat detection reporting, and OS and Application life cycle management.
-* 2 x ARM Cortex M4Fs. Developers can build and deploy **Real Time** applications to these cores. Real Time applications can be built against the bare metal or built using  real time frameworks such as FreeRTOS and Azure RTOS.
+* 1 x  ARM Cortex A7 core running Embedded Linux (built with Yokto), exposing a set of POSIX APIs. Developers can build and deploy a **High-level** application to this core. This core is also responsible for the TrustZone Security Monitor, threat detection reporting, and OS and Application life cycle management.
+* 2 x ARM Cortex M4Fs. Developers can build and deploy **Real-time** applications to these cores. Real-time applications can be built against the bare metal or built using  Real-time frameworks such as FreeRTOS and Azure RTOS.
 
-With Visual Studio and Visual Studio Code you can develop and debug applications running on all three cores. For example, you can simultaneously debug an app running on the A7 core and a M4 core FreeRTOS app.
-
+With [Visual Studio](https://visualstudio.microsoft.com/downloads/) (free community edition or better) or [Visual Studio Code](https://code.visualstudio.com/), you can develop and debug applications running on all three cores. For example, you can simultaneously debug an app running on the A7 core and a M4 core FreeRTOS app.
 
 ![Azure Sphere architecture](resources/azure-sphere-architecture.png)
 
@@ -58,22 +59,22 @@ The application running on the Azure Sphere consists of two parts.
 
 ![](resources/application-architecture.png)
 
-### Realtime FreeRTOS Application
+### Real-time FreeRTOS Application
 
-* The Realtime FreeRTOS application running on one of the M4 cores that is responsible for running the timing sensitive HC-SR04 ultrasonic distance sensor.
-* Distance is measured every 100 milliseconds so the rover can decide best route.
-* The sensor requires precise microsecond timing to trigger the distance measurement process, so it is a perfect candidate for running on the Realtime core as a FreeRTOS Task.
-* Every 5 seconds a FreeRTOS Task sends distance telemetry to the Azure Sphere A7 Highlevel application.
+* The Real-time FreeRTOS application running on one of the M4 cores that is responsible for running the timing-sensitive HC-SR04 ultrasonic distance sensor.
+* Distance is measured every 100 milliseconds so the rover can decide the best route.
+* The sensor requires precise microsecond timing to trigger the distance measurement process, so it is a perfect candidate for running on the Real-time core as a FreeRTOS Task.
+* Every 5 seconds a FreeRTOS Task sends distance telemetry to the Azure Sphere A7 High-level application.
 
-### Azure IoT Highlevel Application
+### Azure IoT High-level Application
 
-* The application running on the Azure Sphere A7 Highlevel application core is responsible for less timing sensitive tasks such as establishing WiFi/Network connectivity, negotiating security and connecting with Azure IoT Central, updating the device twin and send telemetry messages.
+* The application running on the Azure Sphere A7 High-level application core is responsible for less timing-sensitive tasks such as establishing WiFi/Network connectivity, negotiating security and connecting with Azure IoT Central, updating the device twin and send telemetry messages.
 
 ### Extending
 
 * I am thinking about extending this solution with a local TinyML module for smarter navigation.
 
---
+---
 
 ## Parts list
 
@@ -81,8 +82,11 @@ The application running on the Azure Sphere consists of two parts.
 * 1 x [MT3620 Grove Breakout](https://www.seeedstudio.com/MT3620-Grove-Breakout-p-4043.html)
 * 2 x [Grove - Ultrasonic Distance Sensor](https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html)
 * 1 x H-Bridge driver. Seeed Studio have a [Grove - I2C Motor Driver](https://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/), or you can wire up your own H-Bridge connector to the Grove Breakout board.
+* 1 x Rover chassis, motors, wheels etc
 
 ![](resources/IMG_0172_cropped.jpg)
+
+---
 
 ## Azure IoT Central
 
@@ -95,6 +99,8 @@ I created a free trial of [Azure IoT Central](https://azure.microsoft.com/en-gb/
 ### Extend and integrate Azure IoT Central applications with other cloud services
 
 Azure IoT Central is also extensible using rules and workflows. For more information, review [Use workflows to integrate your Azure IoT Central application with other cloud services](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-configure-rules-advanced?WT.mc_id=julyot-co2-dglover)
+
+---
 
 ## How to build the solution
 
